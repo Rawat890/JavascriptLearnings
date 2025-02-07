@@ -15,7 +15,7 @@ function fetchPersonData(err, data) {
     }
 }
 
-/*
+
 function requestPersonData(url, callBack) {
 
     console.log("Requesting data\n");
@@ -55,11 +55,11 @@ function requestPersonData1(url, callBack) {
     })
 }
 
-requestPersonData1(localUrl, fetchPersonData)*/
+requestPersonData1(localUrl, fetchPersonData)
 
 
 
-//// Apply a filter operation in the callback function to remove unnecessary data based on certain conditions.
+// Apply a filter operation in the callback function to remove unnecessary data based on certain conditions.
 const condition = 'Filter that data from the file that has the length of lastName = 5'
 function filterPersonData(condition, url, callBack) {
 
