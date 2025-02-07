@@ -6,7 +6,7 @@
 
 //Goal: Fetch data from an API and check for successful HTTP status codes (200-299). If the status code is outside this range, pass an error message to the callback.
 
-/*
+
 
 const coinUrl = 'https://api.coingecko.com/api/v3/coins/bitcoin';
 
@@ -49,7 +49,7 @@ getCoinData(coinUrl, (url, fetchCoinDataCallBack) => {
 })
 
 
-*/
+
 
 //Handling JSON Response -Fetch data from an API and parse the JSON response inside the callback before passing it to the callback.
 const catUrl = 'https://catfact.ninja/fact';
@@ -76,8 +76,10 @@ function getCatData(url, callBack) {
             })
             .then(response => response.json())
             .then(data => {
-                const parsedData = data.map((fact) => ({ title: fact.fact }))
-                callBack(null, parsedData)
+                const parseData = {
+                    fact: data.fact, length: data.length
+                }
+                callBack(null, parseData)
             })
             .catch(error => callBack(error, null))
 
