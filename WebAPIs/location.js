@@ -1,0 +1,3 @@
+/*Web apis are also called as the browser apis that is provided by the browser to access those functionalities which is not in the range of javascript. It act as a bridge to communicate with the browser and to perform various types of functionalities*/
+
+//Geolocation api - This api is used to get the access to the location of the user using the website and obviously after the user gives the permission
