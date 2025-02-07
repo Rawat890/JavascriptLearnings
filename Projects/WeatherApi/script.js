@@ -2,10 +2,11 @@
 const date = document.querySelector('.date')
 const city = document.querySelector('.city')
 const searchIcon = document.querySelector('.searchIcon')
-const weather = document.querySelector('.weather')
+const weatherImg = document.querySelector('.weather')
 const temperature = document.querySelector('.temperature')
 const temperatureMax = document.querySelector('.highValue')
 const temperatureMin = document.querySelector('.lowValue')
+const description = document.querySelector('.typeOfWeather')
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -42,6 +43,10 @@ const getWeatherDetails = async () => {
         const weatherData = await weatherDataFetch.json();
         console.log(weatherData);
         city.innerHTML = `${weatherData.name}`
+        description.innerHTML = `${weatherData.weather[0].description}`
+        weatherImg.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"/>`;
+
+        temperature.innerHTML = `<h2>${Math.round(weatherData.main.temp)}</h2>`;
 
     } catch (error) {
         console.log(error)
